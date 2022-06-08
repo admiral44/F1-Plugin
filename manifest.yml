@@ -1,0 +1,31 @@
+modules:
+  jira:issuePanel:
+    - key: F1-plugin-hello-world-Issue-panel
+      function: isuuePanel
+      title: OAuth365
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  jira:adminPage:
+    - key: F1-plugin-hello-world-Admin-Page
+      function: adminPage
+      title: OAuth365
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+
+  function:
+    - key: isuuePanel
+      handler: index.isuuePanelrun
+    - key: adminPage
+      handler: index.adminPagerun
+app:
+  id: ari:cloud:ecosystem::app/581fa50f-f085-454b-860e-9b7a3f68e5c9
+
+permissions:
+  scopes:
+    - storage:app
+    - read:jira-work
+    - read:comment:jira
+    - read:comment.property:jira
+    - read:group:jira
+    - read:project:jira
+    - read:project-role:jira
+    - read:user:jira
+    - read:avatar:jira
