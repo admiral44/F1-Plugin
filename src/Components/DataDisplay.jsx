@@ -4,9 +4,8 @@ import ForgeUI, {
 import api, { route } from "@forge/api";
 
 const fetchCommentsForIssue = async (issueIdOrKey) => {
-    const res = await api
-      .asUser()
-      .requestJira(route`/rest/api/3/issue/${issueIdOrKey}/comment`);
+    
+    const res = await api.asUser().requestJira(route`/rest/api/3/issue/${issueIdOrKey}/comment`);
   
     const data = await res.json();
     return data.comments;
