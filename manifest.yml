@@ -2,12 +2,12 @@ modules:
   jira:issuePanel:
     - key: F1-plugin-hello-world-Issue-panel
       function: isuuePanel
-      title: OAuth365
+      title: Office365
       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
   jira:adminPage:
     - key: F1-plugin-hello-world-Admin-Page
       function: adminPage
-      title: OAuth365
+      title: Office365
       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
 
   function:
