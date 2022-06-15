@@ -17,13 +17,10 @@ export const OAuthFrom = () => {
                 await storage.set('OAuth365-email', formData.OAuth365Email);
                 await storage.setSecret('OAuth365-pwd', formData.OAuth365Password);
                 // const getEmail = await storage.get('OAuth365-email')
-                setGetData(
-                    {
-                        "email": await storage.get('OAuth365-email'),
-                        "pws": await storage.getSecret('OAuth365-pwd')
-                    }
-                )
-
+                setGetData({
+                    "email": await storage.get('OAuth365-email'),
+                    "pws": await storage.getSecret('OAuth365-pwd')
+                })
 
             } else {
                 console.log("Please fill all information.");
@@ -31,7 +28,6 @@ export const OAuthFrom = () => {
         } catch (error) {
             console.log(error)
         }
-
     };
 
 

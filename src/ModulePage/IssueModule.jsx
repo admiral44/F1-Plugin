@@ -1,21 +1,25 @@
 import { storage } from '@forge/api';
-import ForgeUI, { Fragment, Tabs, Tab, useState, Text } from '@forge/ui';
+import ForgeUI, { Fragment, Tabs, Tab, useState, Text, useEffect } from '@forge/ui';
 import { DataDisplay } from '../Components/DataDisplay'
 import { TableCmp } from '../Components/TableCmp';
 
 export const IssueModule = () => {
 
 
-    const information = async () => {
-        return console.log(" Information is here : ", await storage.get('OAuth365-email'))
-    }
+    const [info, setInfo] = useState()
+    // console.log("Email is here : ", info);
+
+    useEffect(async () => {
+        console.log("Here : ", setInfo(await storage.get('OAuth365-email')))
+        return console.log( JSON.stringify( await storage.query().where('OAuth365-email') ) );
+    }, []);
 
     return (
         <Fragment>
             <Tabs>
-                <Tab label="Information">
+                <Tab label="Information" >
                     <DataDisplay />
-                    {/* <Text>{data}</Text> */}
+                    {info == undefined ? <Text>Information about Mail : undefined</Text> : <Text>Information about Mail : {info}</Text>}
                 </Tab>
                 <Tab label="Table">
                     <TableCmp />
