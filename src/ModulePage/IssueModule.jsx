@@ -19,7 +19,7 @@ export const IssueModule = () => {
             <Tabs>
                 <Tab label="Information" >
                     <DataDisplay />
-                    {info == undefined ? <Text>Information about Mail : undefined</Text> : <Text>Information about Mail : {info}</Text>}
+                    {info == undefined ? <Text>Information about Latest Mail : undefined</Text> : <Text>Information about Latest Mail : {info}</Text>}
                 </Tab>
                 <Tab label="Table">
                     <TableCmp />
